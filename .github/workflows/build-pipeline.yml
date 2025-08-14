@@ -18,6 +18,7 @@ jobs:
           
       - name: Run Tests
         run: |
+          ls
           cd ./demo
           mvn clean
           mvn -B test --file pom.xml
