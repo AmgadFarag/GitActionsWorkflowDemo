@@ -1,0 +1,22 @@
+name: Main/Single entrypoint pipeline
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  trigger_build_flow:
+    runs-on: ubuntu-latest
+    # outputs:
+      # output1: ${{ some_variable }}
+    steps:
+      - name: Call Build pipeline
+        uses: GitActionsWorkflowDemo/.github/workflows/build-pipeline@main
+
+  trigger_email_flow:
+    runs-on: windows-latest
+    needs: trigger_build_flow
+    # if:  ${{ some_variable }} == 'true'
+    steps:
+      - name: Call Email pipeline
+        uses: GitActionsWorkflowDemo/.github/workflows/email-pipeline@main
