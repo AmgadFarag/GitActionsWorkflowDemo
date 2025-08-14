@@ -15,10 +15,10 @@ jobs:
       #     java-version: '17'
       #     distribution: 'temurin'
       #     cache: maven
-          
+
+      - run: ls -la
       - name: Run Tests
         run: |
-          ls -la
           cd demo
           mvn clean
           mvn -B test --file pom.xml
