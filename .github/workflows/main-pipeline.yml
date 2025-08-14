@@ -19,7 +19,7 @@ jobs:
       # output1: ${{ some_variable }}
     steps:
       - name: Call Build pipeline
-        uses: ./.github/workflows/build-pipeline@main
+        uses: ./.github/workflows/build-pipeline.yml
 # --------
 
   trigger_email_flow:
@@ -28,4 +28,4 @@ jobs:
     # if:  ${{ some_variable }} == 'true'
     steps:
       - name: Call Email pipeline
-        uses: ./.github/workflows/email-pipeline@main
+        uses: ./.github/workflows/email-pipeline.yml
