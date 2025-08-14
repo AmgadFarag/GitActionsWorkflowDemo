@@ -19,13 +19,13 @@ jobs:
       - name: Run Tests
         run: |
           ls -la
-          cd ./demo
+          cd demo
           mvn clean
           mvn -B test --file pom.xml
 
       - name: Maven Build
         run: |
-          cd ./demo
+          cd demo
           mvn clean
           mvn -B package --file pom.xml
 
