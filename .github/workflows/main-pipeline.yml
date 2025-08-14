@@ -11,7 +11,7 @@ jobs:
       # output1: ${{ some_variable }}
     steps:
       - name: Call Build pipeline
-        uses: GitActionsWorkflowDemo/.github/workflows/build-pipeline@main
+        uses: .github/workflows/build-pipeline@main
 
   trigger_email_flow:
     runs-on: windows-latest
@@ -19,4 +19,4 @@ jobs:
     # if:  ${{ some_variable }} == 'true'
     steps:
       - name: Call Email pipeline
-        uses: GitActionsWorkflowDemo/.github/workflows/email-pipeline@main
+        uses: .github/workflows/email-pipeline@main
