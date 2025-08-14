@@ -19,6 +19,7 @@ jobs:
     # outputs:
       # output1: ${{ some_variable }}
     steps:
+      - uses: actions/checkout@v4
       - name: Call Build pipeline
         uses: ./.github/workflows/build-pipeline.yml
 # --------
@@ -28,5 +29,6 @@ jobs:
     needs: [prepare_env, trigger_build_flow]
     # if:  ${{ some_variable }} == 'true'
     steps:
+      - uses: actions/checkout@v4
       - name: Call Email pipeline
         uses: ./.github/workflows/email-pipeline.yml
