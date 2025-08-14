@@ -9,9 +9,6 @@ jobs:
   build_job:
     runs-on: ubuntu-latest
     steps:
-      # - name: Presetup
-      #   run: cd demo/
-        
       # - name: Set up JDK 17
       #   uses: actions/setup-java@v4
       #   with:
@@ -21,13 +18,13 @@ jobs:
           
       - name: Run Tests
         run: |
-          cd demo/
+          cd ./demo
           mvn clean
           mvn -B test --file pom.xml
 
       - name: Maven Build
         run: |
-          cd demo/
+          cd ./demo
           mvn clean
           mvn -B package --file pom.xml
 
