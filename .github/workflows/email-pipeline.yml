@@ -1,0 +1,38 @@
+name: Email on Completion
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  send_email:
+    name: Send Email
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Prepare env
+        # if: ${{ env.IGNORE_PIPELINE == 'false' }}
+        run: |
+          python -m venv venv
+          pip install -r requirements.txt
+          popd
+
+      - name: Email Script
+        # if: ${{ env.IGNORE_PIPELINE == 'false' }}
+        run: |
+          # Body file.html
+          cat <<EOF> body.html
+          <p>Some html text</p>
+          EOF
+
+          # Call a py script
+          # python send_email.py
+
+          popd
+
+
+      - name: Clean up
+        if: always()
+        run: |
+          git config --unset-all --global user.email
+          git config --unset-all --global user.name
