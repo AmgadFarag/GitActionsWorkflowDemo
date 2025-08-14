@@ -27,7 +27,7 @@ jobs:
           # EOF
 
           # Call a py script
-          python send_email.py
+          python demo/send_email.py
 
           popd
 
@@ -35,5 +35,6 @@ jobs:
       - name: Clean up
         if: always()
         run: |
-          git config --unset-all --global user.email
-          git config --unset-all --global user.name
+          # git config --unset-all --global user.email
+          # git config --unset-all --global user.name
+          echo Cleanup Complete
