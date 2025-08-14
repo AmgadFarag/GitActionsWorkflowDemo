@@ -10,7 +10,8 @@ jobs:
     # outputs:
       # output1: ${{ some_variable }}
     steps:
-    
+
+      - run: actions/checkout@v4
       - name: Prepare env
         # if: ${{ env.IGNORE_PIPELINE == 'false' }}
         run: |
@@ -27,7 +28,8 @@ jobs:
           # EOF
 
           # Call a py script
-          python demo/send_email.py
+          cd demo
+          python send_email.py
 
           popd
 
