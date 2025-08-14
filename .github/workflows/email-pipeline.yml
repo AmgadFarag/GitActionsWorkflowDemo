@@ -1,7 +1,7 @@
 name: Email on Completion
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   send_email:

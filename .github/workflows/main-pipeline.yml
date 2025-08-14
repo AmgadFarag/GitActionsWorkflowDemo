@@ -1,6 +1,7 @@
 name: Main/Single entrypoint pipeline
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
 
